@@ -1,0 +1,18 @@
+name: Print Commit and Current Time
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  print-time:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run time print script
+        run: |
+          chmod +x print_times.sh
+          ./print_times.sh
